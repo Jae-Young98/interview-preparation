@@ -55,7 +55,7 @@
           <details>
             <summary>답변</summary>
             <p>장점으로는 플랫폼 독립성, 메모리 관리, 예외 처리, 다양한 라이브러리가 있습니다.</p>
-            <p>단점으로는 바이트 코드를 해석하고 실행하는 과정에서 성능저하가 발생할 수 있고, 프로그램 실행에 필요한 메모미를 동적으로 할당하고 해제하기 때문에 일부 시스템에서는 메모리 사용량에 부담이 가해질 수 있습니다.</p>
+            <p>단점으로는 바이트 코드를 해석하고 실행하는 과정에서 성능저하가 발생할 수 있고, 프로그램 실행에 필요한 메모리를 동적으로 할당하고 해제하기 때문에 일부 시스템에서는 메모리 사용량에 부담이 가해질 수 있습니다.</p>
           </details>
         </li>
         <li> JVM과 내부에서 실행되고 있는 프로그램은 부모 프로세스 - 자식 프로세스 관계를 갖고 있다고 봐도 무방한가요?
@@ -98,5 +98,77 @@
         </li>
       </ul>
       </details>
+    </details>
+</details>
+
+<details>
+  <summary><h3>4. 리플렉션에 대해 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>리플렉션은 구체적인 클래스 타입을 알지 못해도 그 클래스의 메소드, 타입, 변수들에 접근할 수 있도록 해주는 자바 API입니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> 그럼 어떤 경우에 사용이 가능할까요?
+          <details>
+            <summary>답변</summary>
+            <p>코드 작성 시점에는 어떤 타입의 클래스를 사용할지 모르지만, 런타임 시점에 지금 실행되고 있는 클래스를 가져와서 실행해야 하는 경우에 사용됩니다. 인텔리제이의 자동완성, 스프링의 어노테이션이 리플렉션을 이용한 기능이라 할 수 있습니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
+
+<details>
+  <summary><h3>5. static에 대해 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>static 키워드를 사용한 변수나 메소드는 클래스가 메모리에 올라갈 때 자동으로 생성되며 클래스 로딩이 끝나면 바로 사용할 수 있습니다. 즉 인스턴스 생성 없이 바로 사용 가능합니다. 모든 객체가 메모리를 공유한다는 특징이 있고, GC 관리 영역 밖에 있기 때문에 프로그램이 종료될 때까지 메모리에 값이 유지된 채로 존재하게 됩니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> 그럼 static은 왜 사용하나요?
+          <details>
+            <summary>답변</summary>
+            <p>자주 변하지 않는 값이나 공통으로 사용되는 값 같은 공용자원에 대한 접근에 있어서 효율을 높일 수 있습니다. 또한 인스턴스 생성 없이 바로 사용 가능하기 때문에 프로그램 내에서 공통으로 사용되는 데이터들을 관리할 때 이용합니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
+
+<details>
+  <summary><h3>6. Error와 Exception의 차이를 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>Error는 실행 중 일어날 수 있는 치명적 오류입니다. 컴파일 시점에 체크할 수 없고, 오류가 발생하면 프로그램은 비정상 종료되며 UncheckedException에 속합니다. 반면, Exception은 Error보다 비교적 경미한 오류이며, try-catch를 이용해 프로그램의 비정상 종료를 막을 수 있습니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> CheckedException과 UnCheckedException의 차이를 설명해주세요.
+          <details>
+            <summary>답변</summary>
+            <p>CheckedException은 실행 전 예측 가능한 예외를 말하고, 예외 처리를 해야 합니다. 대표적인 Exception으로는 IO, ClassNotFound 등이 있습니다.</p>
+            <p>UnCheckedException은 실행하고 난 후에 알 수 있는 예외를 말하고, 따로 예외처리를 하지 않아도 됩니다. 대표적으로 NPE, ArrayIndexOutOfBoundE 등이 있습니다.</p>
+          </details>
+        </li>
+        <li> 예외처리의 세 가지 방법에 대해 설명해주세요.
+          <details>
+            <summary>답변</summary>
+            <p>예외가 발생한 메소드 내에서 직접 처리하는 방법, 예외가 발생한 메소드를 호출한 곳으로 예외 객체를 넘겨주는 방법 그리고, 사용자 정의 예외를 생성하여 처리하는 방법이 있습니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
+
+<details>
+  <summary><h3>7. Synchronized가 뭔지 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>여러 개의 쓰레드가 한 개의 자원을 사용하고자 할 때, 현재 데이터를 사용하고 있는 쓰레드를 제외하고 나머지 쓰레드들은 접근을 막는 개념입니다. 데이터의 thread-safe를 보장하기 위해 자바의 Synchronized 키워드를 통해 멀티 쓰레드 환경에서 쓰레드간 동기화를 시킵니다. 다만 해당 키워드를 남발하게 되면 성능저하의 우려가 있습니다.</p>
     </details>
 </details>
