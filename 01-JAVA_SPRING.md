@@ -172,3 +172,28 @@
       <p>여러 개의 쓰레드가 한 개의 자원을 사용하고자 할 때, 현재 데이터를 사용하고 있는 쓰레드를 제외하고 나머지 쓰레드들은 접근을 막는 개념입니다. 데이터의 thread-safe를 보장하기 위해 자바의 Synchronized 키워드를 통해 멀티 쓰레드 환경에서 쓰레드간 동기화를 시킵니다. 다만 해당 키워드를 남발하게 되면 성능저하의 우려가 있습니다.</p>
     </details>
 </details>
+
+<details>
+  <summary><h3>8. Stream이 뭔지 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>Stream API는 자바8 부터 도입이 되었으며 일련의 데이터 요소인 배열이나 컬렉션 등의 데이터를 처리하기 위한 API입니다. 멀티 스레드를 활용해서 병렬로 연산을 수행할 수 있고, 내부 반복으로 연산을 수행하기 때문에 코드가 간결해지는 장점이 있습니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> Stream과 for ~ loop의 성능 차이를 비교해주세요.
+          <details>
+            <summary>답변</summary>
+            <p>보통의 상황에선 for-loop의 성능이 더 좋습니다. 특히 원시타입의 데이터 처리시에 월등한 차이가 있고, 참조타입의 데이터에서는 큰 차이가 나지 않습니다.</p>
+          </details>
+        </li>
+        <li> Stream의 병렬처리에 대해 설명해주세요.
+          <details>
+            <summary>답변</summary>
+            <p>parallelStream을 통해 데이터를 병렬로 처리할 수 있습니다. 그러나 처리 순서가 보장되지 않고 메모리 사용 증가, 성능 개선 효과가 불확실하다는 제약사항이 있습니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
