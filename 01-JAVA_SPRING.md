@@ -197,3 +197,22 @@
       </details>
     </details>
 </details>
+
+<details>
+  <summary><h3>9. equals()와 hashCode()에 대해 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>equals()는 객체의 내용이 같은지 비교합니다. 흔히 동등 비교라고 하며, 재정의 하지 않을 경우 내부적으로 ==과 같습니다. hashCode()는 두 객체가 같은 객체인지 확인합니다. 객체의 주소 값을 해싱 기법으로 해시 코드를 만든 후 반환합니다. 따라서 서로 다른 두 객체는 같은 해시 코드를 가질 수 없게 됩니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> equals()와 hashCode()는 왜 같이 사용하나요?
+          <details>
+            <summary>답변</summary>
+            <p>해시를 사용한 자료구조는 key를 결정할 때 hashCode()를 사용하기 때문입니다. 즉 객체가 동일한지 비교하기 전에, 두 객체의 해시 코드가 같은지 비교하고 그 후 객체가 동등한지 판단합니다. 이때, hashCode()가 재정의되어 있지 않다면 각 객체가 저장된 메모리 주소가 반환됩니다. 따라서 해시 자료구조를 사용하는 경우엔 두 메소드를 같이 사용 해주는 것이 좋습니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
