@@ -242,3 +242,24 @@
       </details>
     </details>
 </details>
+
+<details>
+  <summary><h3>10. AOP에 대해 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>AOP는 관점지향 프로그래밍이라는 뜻으로 OOP의 개념을 보완하기 위해 사용됩니다. 가령 모든 컨트롤러 요청의 파라미터를 로깅하고 싶을 때, 로깅이라는 기능이 중복될 수 있습니다. 이를 컨트롤러에 진입하기 전에 일괄적으로 처리해 줄 수 있다면 각 기능에 집중할 수 있고, 파라미터 로깅도 본인의 기능에만 충실할 수 있습니다. AOP의 구현 방법에는 xml, 어노테이션, 클래스를 통한 설정이 있습니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> AOP를 구현할 때 Advice, Poincut 같은 용어를 사용하는데, 이에 대해 설명해주세요.
+          <details>
+            <summary>답변</summary>
+            <p>처리될 지점과 무엇을 처리할 것인지 정의한 Advice와 어느 대상에게 Advice를 적용할지 표현하는 Pointcut이 있습니다. Aspect는 공통된 관심사를 묶은 모듈로 하나 이상의 Advice와 Pointcut이 있습니다. Pointcut에 의해 Aspect를 적용할 대상이 된 객체를 Target이라고 합니다.</p>
+            <p>Jointpoint는 Aspect가 적용되는 지점입니다. 객체의 생성, 대상의 실행 전, 후 등 다양한 지점이 있고 이에 대한 정보를 Aspect의 파라미터로 전달받아 상황에 맞는 이벤트 처리가 가능합니다. 다만 스프링에서는 메서드 Joinpoint만 제공됩니다.</p>
+            <p>앞서 정의한 Aspect를 애플리케이션 코드와 연결하는 과정을 Weaving이라고 하며 컴파일 시점, 클래스 로딩 시점, 런타임 시점에 적용할 수 있지만 스프링은 런타임 시점에 적용합니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
