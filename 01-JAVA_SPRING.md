@@ -272,3 +272,48 @@
       </details>
     </details>
 </details>
+
+<details>
+  <summary><h3>11. Spring에서 Interceptor와 Servlet Filter에 대해 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>인터셉터는 요청에 대한 작업 전/후로 가로채 요청과 응답을 참조하거나 가공하는 역할을 합니다. 인터셉터는 스프링 컨텍스트에서 동작하며, Dispatcher Servlet이 Controller를 호출하기 전/후에 인터셉터가 끼어들어 요청과 응답을 참조하거나 가공할 수 있는 기능을 제공합니다. 세부적인 보안 및 인증/인가 공통 작업, API 호출에 대한 로깅 또는 검사, Controller로 넘겨주는 데이터 가공등에 사용됩니다.</p>
+      <p>필터는 요청과 응답을 거른 뒤 정제하는 역할을 합니다. 톰캣과 같은 웹 컨테이너에 의해 관리가 되고, 스프링 범위 밖에서 처리됩니다. Dispatcher Servlet에 요청이 전달되기 전/후에 url 패턴에 맞는 모든 요청에 대해 부가 작업을 처리할 수 있는 기능을 제공합니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> 그럼 인터셉터만 쓰는게 나아보이는데 필터는 어떤 상황에 사용해야 하나요?
+          <details>
+            <summary>답변</summary>
+            <p>필터는 인터셉터와 달리 Request, Response 객체를 조작할 수 있습니다. 즉 스프링과 무관하게 전역적으로 처리해야 하는 작업들을 처리할 수 있습니다. 인터셉터보다 앞단에서 동작하기 때문에 예를 들어 보안 검사를 통해 올바른 요청이 아닐 경우 차단을 하여 스프링 컨테이너까지 요청이 전달되지 못하고 차단되므로 안전성을 더욱 높일 수 있습니다. 또한 이미지나 데이터 압축, 문자열 인코딩과 같이 웹 어플리케이션에 전반적으로 사용되는 기능을 구현하기에 적합합니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
+
+<details>
+  <summary><h3>12. DispatcherServlet의 역할에 대해 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>디서패처 서블릿은 HTTP 프로토콜로 들어오는 모든 요청을 가장 먼저 받아 적합한 컨트롤러에 위임해주는 프론트 컨트롤러의 역할을 합니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> 여러 요청이 들어온다고 가정할 때, DispatcherServlet은 한번에 여러 요청을 모두 받을 수 있나요?
+          <details>
+            <summary>답변</summary>
+            <p>네. 디스패처서블릿은 각 HTTP 요청마다 서블릿 컨테이너가 생성한 스레드에서 실행되기 때문에 여러 요청을 병렬로 처리할 수 있습니다.</p>
+          </details>
+        </li>
+        <li> 수많은 @Controller 를 DispatcherServlet은 어떻게 구분 할까요?
+          <details>
+            <summary>답변</summary>
+            <p>RequestMappingHandlerMapping이 처리합니다. 이는 @Controller로 작성된 모든 컨트롤러를 찾고 파싱하여 HashMap으로 관리합니다. 요청이 오면 요청 정보를 만들고, HashMap에서 요청을 처리할 대상을 찾은 후에 HandlerExecutionChain으로 감싸서 반환합니다. 이후 HandlerAdapter를 통해 컨트롤러로 요청을 위임합니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
