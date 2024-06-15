@@ -317,3 +317,48 @@
       </details>
     </details>
 </details>
+
+<details>
+  <summary><h3>13. JPA와 같은 ORM을 사용하는 이유가 뭔가요?</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>데이터를 객체화 함으로써 객체 지향 언어의 장점을 활용하며 개발이 가능하고 반복되는 쿼리문 작성이 줄어 생산성이 높아집니다. 그리고 유지보수에 용이하며 패러다임의 불일치를 해결해줍니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> 영속성 컨텍스트는 뭔가요? 이게 진짜 성능 향상에 큰 도움이 되나요?
+          <details>
+            <summary>답변</summary>
+            <p>영속성 컨텍스트는 데이터를 영구 보관하는 환경이라는 뜻으로 애플리케이션과 DB 사이에서 객체를 보관하는 가상의 데이터베이스 역할을 합니다. 이는 논리적인 개념으로 엔티티매니저가 생성될 때 1대 1로 영속성 컨텍스트가 생성됩니다. 엔티티매니저를 통해 관리할 수 있습니다.</p>
+            <p>1차 캐시, 동일성 보장, 쓰기 지연, 변경 감지, 레이지 로딩과 같이 ORM의 최적화 기능들이 성능 향상에 도움이 됩니다.</p>
+          </details>
+        </li>
+        <li> N + 1 문제에 대해 설명해 주세요.
+          <details>
+            <summary>답변</summary>
+            <p>N + 1 이란 1번의 쿼리를 보냈을 때 의도하지 않은 N번의 쿼리가 추가로 실행되는 것을 뜻합니다. 발생 이유로는 연관관계를 가진 엔티티를 조회할 때 한 쪽 테이블만 조회하고 연결된 다른 테이블은 따로 조회하기 때문인데, Fetch Join을 사용하면 미리 두 테이블을 Join하여 한 번에 모든 데이터를 가져올 수 있어 해당 문제를 방지할 수 있습니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
+
+<details>
+  <summary><h3>14. @Transactional 은 어떻게 동작하나요?</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>@Transactional을 메소드 또는 클래스에 명시하면, AOP를 통해 Target이 상속하고 있는 인터페이스 또는 Target 객체를 상속한 Proxy 객체가 생성되며, Proxy 객체의 메소드를 호출하면 Target 메소드 전 후로 트랜잭션 처리를 수행합니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> @Transactional(readonly=true) 를 사용하는 이유를 설명해주세요.
+          <details>
+            <summary>답변</summary>
+            <p>트랜잭션 안에서 수정 / 삭제 작업이 아닌 조회 목적인 경우에 주로 사용하며, 영속성 컨텍스트에서 엔티티를 관리 할 필요가 없기 때문에 메모리 성능을 높일 수 있고 가독성이 높아진다는 장점이 있습니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
