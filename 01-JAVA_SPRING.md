@@ -368,5 +368,16 @@
     <details>
       <summary>답변</summary>
       <p>어노테이션은 작성한 코드에 대해 추가적인 정보를 제공하면서 컴파일 타임 혹은 런타임 시점에서 해당 코드에 필요한 추가적인 처리를 해주는 역할을 합니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> Lombok의 @Data를 잘 사용하지 않는 이유는 무엇일까요?
+          <details>
+            <summary>답변</summary>
+            <p>먼저 @Setter로 인해 객체가 수정될 수 있기 때문에 객체의 안정성 떨어집니다. 그리고 @ToString으로 인해 양방향 연관관계에서 순환 참조의 발생 가능성등이 있습니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
     </details>
 </details>
