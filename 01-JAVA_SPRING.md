@@ -362,3 +362,11 @@
       </details>
     </details>
 </details>
+
+<details>
+  <summary><h3>15. Java 에서 Annotation 은 어떤 기능을 하나요?</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>어노테이션은 작성한 코드에 대해 추가적인 정보를 제공하면서 컴파일 타임 혹은 런타임 시점에서 해당 코드에 필요한 추가적인 처리를 해주는 역할을 합니다.</p>
+    </details>
+</details>
