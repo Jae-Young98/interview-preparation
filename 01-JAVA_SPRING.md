@@ -381,3 +381,23 @@
       </details>
     </details>
 </details>
+
+<details>
+  <summary><h3>16. RestAPI가 뭔지 설명해주세요.</h3></summary>
+    <details>
+      <summary>답변</summary>
+      <p>Rest는 Representational State Tranfer의 약자이고 URI와 HTTP 메소드를 이용해 객체화된 서비스에 접근하는 것입니다. 대표적으로 GET POST PUT DELETE 메소드를 사용합니다.</p>
+      <details>
+      <summary>꼬리질문</summary>
+      <ul>
+      <li> Get과 Post의 차이는 뭔가요?
+          <details>
+            <summary>답변</summary>
+            <p>Get 방식은 주로 클라이언트가 서버에 데이터 조회를 요청할 때 사용하고 url에 쿼리 파라미터 등으로 결합되어 전송되므로 post 방식에 비해 보안성이 상대적으로 떨어집니다.</p>
+            <p>Post 방식은 서버에 데이터를 전달하기 위해 사용되고 전달되는 데이터는 주로 json 형식의 body에 포함되어 전달됩니다.</p>
+          </details>
+        </li>
+      </ul>
+      </details>
+    </details>
+</details>
